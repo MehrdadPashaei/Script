@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="http://127.0.0.1:8000/static/export/style.css">
+
+</head>
+<body>
+    <!-- phone number -->
+    <div>
+        <div id="getphone">
+            <p>برای بازی شماره خود را وارد کنید .</p>
+            <input type="text" type="tel" id="getphoneinput">
+            <button onclick="sendrequest('0')">دریافت کد تایید</button>
+        </div>
+        <div id="getcode">
+            کد تایید ارسال شده را وارد کنید.
+            <input  type="number" id="getcodeinput">
+            
+            <button onclick="sendrequest('2')">اصلاح شماره</button>
+
+            اطلاعات زیر اجباری هستند.
+            <input type="text" id="custumerName">
+            <select id="page4_gender" name="customer_gender" required>
+                <option  value="مرد">مرد</option>
+                <option value="زن">زن</option>
+            </select>
+            <button onclick="sendrequest('1')">ثبت </button>
+
+        </div>
+        <div id="endgame">
+
+        </div>
+    </div>
+    <!-- game -->
+    <div id="end_game"></div>
+        <script src="http://127.0.0.1:8000/static/export/index.js?v=28">
+    </script>
+</body>
+
+
+</html>
