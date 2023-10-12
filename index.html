@@ -11,34 +11,63 @@
 </head>
 <body class="gradient-background">
     <!-- phone number -->
-    <div>
-        <div id="getphone">
-            <p>برای بازی شماره خود را وارد کنید .</p>
-            <input type="text" type="tel" id="getphoneinput">
-            <button onclick="sendrequest('0')">دریافت کد تایید</button>
+    <div class="input-field">
+        <div class="container">
+            <div class="pages" id="getphone">
+                <p class="pages_p">
+                    <span class="iconify" data-icon="fluent:phone-chat-16-regular" style="color: #f40;" data-width="150" data-height="150"></span>
+                    برای بازی شماره خود را وارد کنید .
+                </p>
+                <div class="input-bg">
+                    <img class="input-img" src="./input-bg.png" alt="input img">
+                    <input class="pages_input" type="text" type="tel" id="getphoneinput">
+                </div>
+                <div class="btn-bg">
+                    <img class="btn-img" src="./btn2.png" alt="btnBg">
+                    <button class="pages_btn" onclick="sendrequest('0')">دریافت کد تایید</button>
+                </div>
+            </div>
         </div>
-        <div id="getcode">
-            کد تایید ارسال شده را وارد کنید.
-            <input  type="number" id="getcodeinput">
-            
-            <button onclick="sendrequest('2')">اصلاح شماره</button>
 
-            اطلاعات زیر اجباری هستند.
-            <input type="text" id="custumerName">
-            <select id="page4_gender" name="customer_gender" required>
-                <option  value="مرد">مرد</option>
-                <option value="زن">زن</option>
-            </select>
-            <button onclick="sendrequest('1')">ثبت </button>
+        <div class="container">
+            <div class="pages2" id="getcode">
+                <p class="pages_p">
+                    کد تایید ارسال شده را وارد کنید.
+                </p>
+                <div class="input-bg">
+                    <img class="input-img" src="./input-bg.png" alt="input img">
+                    <input class="pages_input"  type="number" id="getcodeinput">
+                </div>
+                <div class="btn-bg-edite">
+                    <span class="iconify text-shadow" data-icon="fluent:edit-20-filled" style="color: #f40;" data-width="30" data-height="30"></span>
+                    <button class="edite-btn" onclick="sendrequest('2')">اصلاح شماره</button>
+                </div>
+                <p class="pages_p">
+                    اطلاعات زیر اجباری هستند.
+                </p>
+                <div class="input-bg">
+                    <img class="input-img" src="./input-bg.png" alt="input img">
+                    <input class="pages_input" type="text" id="custumerName" placeholder="نام و نام خانوادگی">
+                </div>
+                <select id="page4_gender" name="customer_gender" required>
+                    <option  value="مرد">مرد</option>
+                    <option value="زن">زن</option>
+                </select>
+                <div class="btn-bg">
+                    <img class="btn-img" src="./btn2.png" alt="btnBg">
+                    <button class="pages_btn" onclick="sendrequest('1')">ثبت </button>
+                </div>
+
+            </div>
         </div>
+
         <div id="endgame">
 
         </div>
     </div>
     <!-- game -->
     <div id="end_game"></div>
-    <div id="end_game"></div>
-        <script src="https://soorchi.com/static/export/index.js?v=28">
+        <script src="https://soorchi.com/static/export/index.js?v=29">
     </script>
 </body>
 
