@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fa" dir="rtl">
+<html lang="fa" dir="rtl" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -31,7 +31,7 @@
 
         <div class="container">
             <div class="pages2" id="getcode">
-                <p class="pages_p">
+                <p class="pages2_p">
                     کد تایید ارسال شده را وارد کنید.
                 </p>
                 <div class="input-bg">
@@ -40,20 +40,32 @@
                 </div>
                 <div class="btn-bg-edite"  onclick="sendrequest('2')">
                     <span class="iconify text-shadow" data-icon="fluent:edit-20-filled" style="color: #f40;padding-left: 5px" data-width="30" data-height="30"></span>
-                    <button class="edite-btn">اگر شماره خود را اشتباه وارد کردید کلیک کنید!</button>
+                    <button class="edite-btn">برای اصلاح شماره کلیک کنید!</button>
                 </div>
-                <p class="pages2_p">
-                    اطلاعات زیر اجباری هستند .
-                </p>
+<!--                <p class="pages2_p">-->
+<!--                    اطلاعات زیر اجباری هستند .-->
+<!--                </p>-->
                 <div class="select-field">
                     <div class="input-bg-select">
                         <img class="input-img-select" src="assets/img/input-bg.png" alt="input img">
                         <input class="pages_input-select" type="text" id="custumerName" placeholder="نام و نام خانوادگی" required>
                     </div>
-                    <select class="select" id="page4_gender" name="customer_gender" required>
-                        <option class="option" value="زن">زن</option>
-                        <option class="option" value="مرد">مرد</option>
-                    </select>
+                    <div class="gender-field">
+                        <div class="gender-input">
+                            <label for="male">مرد</label>
+                            <input id="male" type="radio" value="مرد">
+                        </div>
+                        <div class="gender-input">
+                            <label for="female">زن</label>
+                            <input id="female" type="radio" value="زن">
+                        </div>
+
+                    </div>
+<!--                    <label for="page4_gender" class="label-text">جنسیت</label>-->
+<!--                    <select class="select" id="page4_gender" name="customer_gender" required>-->
+<!--                        <option class="option" value="زن">زن</option>-->
+<!--                        <option class="option" value="مرد">مرد</option>-->
+<!--                    </select>-->
                 </div>
 
                 <div class="btn-bg-finished">
