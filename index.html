@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>شروع بازی</title>
-    <link rel="stylesheet" href="http://127.0.0.1:8000/static/export/style.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
     <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
 
 
@@ -19,39 +19,47 @@
                     برای بازی شماره خود را وارد کنید .
                 </p>
                 <div class="input-bg">
-                    <img class="input-img" src="./input-bg.png" alt="input img">
-                    <input class="pages_input" type="text" type="tel" id="getphoneinput">
+                    <img class="input-img" src="assets/img/input-bg.png" alt="input img">
+                    <input class="pages_input" autocomplete="off" placeholder="مثال : 09123456789" type="number" type="tel" id="getphoneinput">
                 </div>
                 <div class="btn-bg">
-                    <img class="btn-img" src="./btn2.png" alt="btnBg">
+                    <img class="btn-img" src="assets/img/btn2.png" alt="btnBg">
                     <button class="pages_btn" onclick="sendrequest('0')">دریافت کد تایید</button>
                 </div>
             </div>
         </div>
 
         <div class="container">
-            <div class="pages" id="getcode">
+            <div class="pages2" id="getcode">
                 <p class="pages_p">
                     کد تایید ارسال شده را وارد کنید.
                 </p>
                 <div class="input-bg">
-                    <img class="input-img" src="./input-bg.png" alt="input img">
+                    <img class="input-img" src="assets/img/input-bg.png" alt="input img">
                     <input class="pages_input"  type="number" id="getcodeinput">
                 </div>
-
-                <button class="pages_btn" onclick="sendrequest('2')">اصلاح شماره</button>
-                <p class="pages_p">
-                    اطلاعات زیر اجباری هستند.
-                </p>
-                <div class="input-bg">
-                    <img class="input-img" src="./input-bg.png" alt="input img">
-                    <input class="pages_input" type="text" id="custumerName" placeholder="نام و نام خانوادگی">
+                <div class="btn-bg-edite"  onclick="sendrequest('2')">
+                    <span class="iconify text-shadow" data-icon="fluent:edit-20-filled" style="color: #f40;padding-left: 5px" data-width="30" data-height="30"></span>
+                    <button class="edite-btn">اگر شماره خود را اشتباه وارد کردید کلیک کنید!</button>
                 </div>
-                <select id="page4_gender" name="customer_gender" required>
-                    <option  value="مرد">مرد</option>
-                    <option value="زن">زن</option>
-                </select>
-                <button class="pages_btn" onclick="sendrequest('1')">ثبت </button>
+                <p class="pages2_p">
+                    اطلاعات زیر اجباری هستند .
+                </p>
+                <div class="select-field">
+                    <div class="input-bg-select">
+                        <img class="input-img-select" src="assets/img/input-bg.png" alt="input img">
+                        <input class="pages_input-select" type="text" id="custumerName" placeholder="نام و نام خانوادگی">
+                    </div>
+                    <select class="select" id="page4_gender" name="customer_gender" required>
+                        <option class="option" value="زن">زن</option>
+                        <option class="option" value="مرد">مرد</option>
+                    </select>
+                </div>
+
+                <div class="btn-bg-finished">
+                    <img class="btn-img-finished" src="assets/img/btn2.png" alt="btnBg">
+                    <button class="pages_btn-finished" onclick="sendrequest('1')">ثبت </button>
+                </div>
 
             </div>
         </div>
@@ -62,7 +70,7 @@
     </div>
     <!-- game -->
     <div id="end_game"></div>
-        <script src="http://127.0.0.1:8000/static/export/index.js?v=28">
+        <script src="http://127.0.0.1:8000/static/export/index.js?v=29">
     </script>
 </body>
 
