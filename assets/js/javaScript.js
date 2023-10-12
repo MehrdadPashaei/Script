@@ -7,7 +7,7 @@ let player_id = null;
 let token = null;
 var GetPhone = document.getElementById('getphone');
 var GetCode = document.getElementById('getcode');
-var EndGame = document.getElementById('endgame');
+var EndGame = document.getElementById('end_game');
 
 var currentUrl = window.location.href;
 GetCode.style.display = "none";
@@ -155,16 +155,16 @@ async function endGame(time, score) {
     if(response.status == 200){
         var canvass = document.querySelector('canvas');
         canvass.style.display = 'none';
-        EndGame.style.display = 'block';
+        EndGame.style.display = 'flex';
 
-        var p1 = document.createElement("p");
-        var p2 = document.createElement("p");
+        var p1 = document.getElementById("end_game-message");
+        var a1 = document.getElementById("end_game-link");
 
         p1.innerHTML = data.message;
-        p2.innerHTML = data.viral;
+        a1.innerHTML = data.viral;
 
         EndGame.appendChild(p1);
-        EndGame.appendChild(p2);
+        EndGame.appendChild(a1);
     } else if(response.status == 404){
         alert("کد صحیح نیست دوباره تلاش کنید!");
     }
@@ -187,3 +187,16 @@ function sendrequest(status){
         default:
             break;
     }};
+
+// function to auto copy text
+
+    // Function to copy text to clipboard
+function copy(that){
+    var inp =document.createElement('input');
+    document.body.appendChild(inp)
+    inp.value =that.textContent
+    inp.select();
+    document.execCommand('copy',true);
+    inp.remove();
+    alert("لینک با موفقییت کپی شد")
+}

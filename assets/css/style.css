@@ -360,4 +360,115 @@ input[type=number] {
     letter-spacing: 0;
     left: 35px;
 }
+.end_game{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.end_game-text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bolder;
+    padding: 10px;
+    border-radius: 10px;
+    width: 80%;
+    box-shadow: rgba(0, 0, 0, 0.17) 0 -23px 25px 0 inset, rgba(0, 0, 0, 0.15) 0 -36px 30px 0 inset, rgba(0, 0, 0, 0.1) 0 -79px 40px 0 inset, rgba(0, 0, 0, 0.06) 0 2px 1px, rgba(0, 0, 0, 0.09) 0 4px 2px, rgba(0, 0, 0, 0.09) 0 8px 4px, rgba(0, 0, 0, 0.09) 0 16px 8px, rgba(0, 0, 0, 0.09) 0 32px 16px;
+    text-shadow: 0 13.36px 8.896px rgba(239, 109, 189, 0),0 -2px 1px rgb(255, 255, 255);
+    letter-spacing: 0;
+    cursor: pointer;
+
+}
+.end_game-link{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 10rem;
+    font-weight: bolder;
+    text-decoration: underline;
+    margin: 30px 0 10px 0;
+    cursor: pointer;
+}
+.link-copy{
+    font-size: 2rem;
+    font-weight: bolder;
+}
+.animate-charcter
+{
+    text-transform: uppercase;
+    background-image: linear-gradient(
+            -225deg,
+            #131313 0%,
+            #251f2a 29%,
+            #eebece 67%,
+            #231557 100%
+    );
+    background-size: auto auto;
+    background-clip: border-box;
+    background-size: 200% auto;
+    color: #fff;
+    background-clip: text;
+    text-fill-color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textclip 6s linear infinite;
+    display: inline-block;
+    font-size: 1.4rem;
+    font-weight: bolder;
+}
+
+@keyframes textclip {
+    to {
+        background-position: 200% center;
+    }
+}
+.link-style{
+    list-style: none;
+    text-decoration: none;
+    color: black;
+    font-size: 2rem;
+    text-align: center;
+}
+.btn-bg-endGame{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+}
+.btn-img-endGame{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 180px;
+    height: 70px;
+    box-shadow: rgba(0, 0, 0, 0.17) 0 -23px 25px 0 inset, rgba(0, 0, 0, 0.15) 0 -36px 30px 0 inset, rgba(0, 0, 0, 0.1) 0 -79px 40px 0 inset, rgba(0, 0, 0, 0.06) 0 2px 1px, rgba(0, 0, 0, 0.09) 0 4px 2px, rgba(0, 0, 0, 0.09) 0 8px 4px, rgba(0, 0, 0, 0.09) 0 16px 8px, rgba(0, 0, 0, 0.09) 0 32px 16px;
+    border-radius: 60px;
+    transition: 0.5s;
+    transform: translateY(0.25em);
+    margin-left: 12px;
+}
+.pages_btn-endGame{
+    position: absolute;
+    font-size: 2.2rem;
+    font-weight: bolder;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    cursor: pointer;
+    font-family: persianBold, sans-serif;
+    display: block;
+    margin: 22px 0 17px 25px;
+    /*font-size: 80px;*/
+    line-height: 80px;
+    color: #1e1c1b;
+    text-shadow: 0 13.36px 8.896px #ef6dbd,0 -2px 1px #fff;
+    letter-spacing: 0;
+    left: 35px;
+}
 
