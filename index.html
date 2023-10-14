@@ -58,11 +58,10 @@
                     <div class="radio-section">
 
                         <div class="radio-list">
-                            <div class="radio-item"><input name="radio" id="radio1" type="radio"><label for="radio1">مرد</label>
+                            <div class="radio-item"><input name="radio" id="radio1" value="on" type="radio" required><label for="radio1">مرد</label>
                             </div>
-                            <div class="radio-item"><input name="radio" id="radio2" type="radio"><label for="radio2">زن</label>
+                            <div class="radio-item"><input name="radio" id="radio2" value="off" type="radio" required><label for="radio2">زن</label>
                             </div>
-<!--                            <input type="checkbox" id="gender_cheker">-->
                         </div>
 
                     </div>
@@ -70,7 +69,7 @@
 
                 <div class="btn-bg-finished">
                     <img class="btn-img-finished" src="assets/img/btn2.png" alt="btnBg">
-                    <button class="pages_btn-finished" onclick="sendrequest('1')">ثبت</button>
+                    <button id="submitButton" class="pages_btn-finished" onclick="sendrequest('1')">ثبت</button>
                 </div>
 
             </div>
