@@ -10,87 +10,106 @@
 
 </head>
 <body class="gradient-background">
-    <!-- phone number -->
-    <div class="input-field">
-        <div class="container">
-            <div class="pages" id="getphone">
-                <p class="pages_p">
-                    <span class="iconify" data-icon="fluent:phone-chat-16-regular" style="color: #f40;" data-width="150" data-height="150"></span>
-                    برای بازی شماره خود را وارد کنید .
-                </p>
-                <div class="input-bg">
-                    <img class="input-img" src="assets/img/input-bg.png" alt="input img">
-                    <input class="pages_input" autocomplete="off" placeholder="مثال : 09123456789" type="number" type="tel" id="getphoneinput">
-                </div>
-                <div class="btn-bg">
-                    <img class="btn-img" src="assets/img/btn2.png" alt="btnBg">
-                    <button class="pages_btn" onclick="sendrequest('0')">دریافت کد تایید</button>
-                </div>
+<!-- phone number -->
+<div class="input-field">
+    <div class="container">
+        <div class="pages" id="getphone">
+            <p class="pages_p">
+                <span class="iconify" data-icon="fluent:phone-chat-16-regular" style="color: #f40;" data-width="150"
+                      data-height="150"></span>
+                برای بازی شماره خود را وارد کنید .
+            </p>
+            <div class="input-bg">
+                <img class="input-img" src="assets/img/input-bg.png" alt="input img">
+                <input class="pages_input" autocomplete="off" placeholder="مثال : 09123456789" type="number" type="tel"
+                       id="getphoneinput">
+            </div>
+            <div class="btn-bg">
+                <img class="btn-img" src="assets/img/btn2.png" alt="btnBg">
+                <button class="pages_btn" onclick="sendrequest('0')">دریافت کد تایید</button>
             </div>
         </div>
+    </div>
 
-        <div class="container">
-            <div class="pages2" id="getcode">
-                <p class="pages2_p">
-                    کد تایید ارسال شده را وارد کنید.
-                </p>
-                <div class="input-bg">
-                    <img class="input-img" src="assets/img/input-bg.png" alt="input img">
-                    <input class="pages_input"  type="number" id="getcodeinput">
+    <div class="container">
+        <div class="pages2" id="getcode">
+            <p class="pages2_p">
+                کد تایید ارسال شده را وارد کنید.
+            </p>
+            <div class="input-bg">
+                <img class="input-img" src="assets/img/input-bg.png" alt="input img">
+                <input class="pages_input" autocomplete="off" type="number" id="getcodeinput">
+            </div>
+            <div class="btn-bg-edite" onclick="sendrequest('2')">
+                <span class="iconify text-shadow" data-icon="fluent:edit-20-filled"
+                      style="color: #f40;padding-left: 5px" data-width="30" data-height="30"></span>
+                <button class="edite-btn">برای اصلاح شماره کلیک کنید!</button>
+            </div>
+            <!--                <p class="pages2_p">-->
+            <!--                    اطلاعات زیر اجباری هستند .-->
+            <!--                </p>-->
+            <div class="select-field">
+                <div class="input-bg-select">
+                    <img class="input-img-select" src="assets/img/input-bg.png" alt="input img">
+                    <input class="pages_input-select" autocomplete="off" type="text" id="custumerName"
+                           placeholder="نام و نام خانوادگی" required>
                 </div>
-                <div class="btn-bg-edite"  onclick="sendrequest('2')">
-                    <span class="iconify text-shadow" data-icon="fluent:edit-20-filled" style="color: #f40;padding-left: 5px" data-width="30" data-height="30"></span>
-                    <button class="edite-btn">برای اصلاح شماره کلیک کنید!</button>
-                </div>
-<!--                <p class="pages2_p">-->
-<!--                    اطلاعات زیر اجباری هستند .-->
-<!--                </p>-->
-                <div class="select-field">
-                    <div class="input-bg-select">
-                        <img class="input-img-select" src="assets/img/input-bg.png" alt="input img">
-                        <input class="pages_input-select" type="text" id="custumerName" placeholder="نام و نام خانوادگی" required>
-                    </div>
-                    <div class="gender-field">
-                        <div class="gender-input">
-                            <label for="male">مرد</label>
-                            <input id="male" type="radio" value="مرد">
-                        </div>
-                        <div class="gender-input">
-                            <label for="female">زن</label>
-                            <input id="female" type="radio" value="زن">
+                <div class="gender-field">
+                    <div class="radio-section">
+
+                        <div class="radio-list">
+                            <div class="radio-item"><input name="radio" id="radio1" type="radio"><label for="radio1">مرد</label>
+                            </div>
+                            <div class="radio-item"><input name="radio" id="radio2" type="radio"><label for="radio2">زن</label>
+                            </div>
+<!--                            <input type="checkbox" id="gender_cheker">-->
                         </div>
 
                     </div>
-<!--                    <label for="page4_gender" class="label-text">جنسیت</label>-->
-<!--                    <select class="select" id="page4_gender" name="customer_gender" required>-->
-<!--                        <option class="option" value="زن">زن</option>-->
-<!--                        <option class="option" value="مرد">مرد</option>-->
-<!--                    </select>-->
                 </div>
 
                 <div class="btn-bg-finished">
                     <img class="btn-img-finished" src="assets/img/btn2.png" alt="btnBg">
-                    <button class="pages_btn-finished" onclick="sendrequest('1')">ثبت </button>
+                    <button class="pages_btn-finished" onclick="sendrequest('1')">ثبت</button>
                 </div>
 
             </div>
         </div>
 
-<!--        <div id="endgame">-->
+        <!--        <div id="endgame">-->
 
-<!--        </div>-->
+        <!--        </div>-->
     </div>
     <!-- game -->
     <div class="end_game" id="end_game">
-        <p id="end_game-message" class="end_game-text">امتیاز شما برابر با 100 شده است و تا تاریخ 12/21/12 فرصت داری تا از لینک زیر برای دوستات ، امتیازتو بیشتر کنی . . .</p>
-        <a id="end_game-link" onclick="copy(this)" class="end_game-link animate-charcter">https//soorchi.com/landing/274?viral=202
+        <p id="end_game-message" class="end_game-text">
+        <span style="font-size: 2rem">
+        آفرین شما 200 امتیاز گرفتید 🥰
+        </span>
+            <br>
+            <span  style="font-size: 1.5rem">
+            حالا با ارسال لینک زیر برای دوستات میتونی امتیاز بیشتری بدست بیاری
+        </span>
+        </p>
+        <p class="link-copy">
+            برای کپی روی لینک زیر کلیک کنید!
+            <br>
+            👇👇👇
+        </p>
+        <a id="end_game-link" onclick="copy(this)" class="end_game-link">https//soorchi.com/landing/274?viral=202
         </a>
-        <p class="link-copy">برای کپی روی لینک کلیک کنید!</p>
         <div class="btn-bg-endGame">
             <img class="btn-img-endGame" src="assets/img/btn2.png" alt="btnBg">
-            <button class="pages_btn-endGame"><a class="link-style" href="https://rojashop.com/">خرید از روژا </a></button>
+            <button class="leaderBoard_btn-endGame"><a class="link-style" href="https://rojashop.com/">جدول امتیازات </a>
+            </button>
+        </div>
+        <div class="btn-bg-endGame">
+            <img class="btn-img-endGame" src="assets/img/btn2.png" alt="btnBg">
+            <button class="pages_btn-endGame"><a class="link-style" href="https://rojashop.com/">خرید از روژا </a>
+            </button>
         </div>
     </div>
+</div>
     <script src="assets/js/javaScript.js">
     </script>
 </body>

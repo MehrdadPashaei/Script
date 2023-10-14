@@ -307,7 +307,7 @@ input[type=number] {
     align-items: center;
 }
 .input-img-select{
-    width: 200px;
+    width: 230px;
     height: 100px;
     margin-right: 10px;
 }
@@ -337,7 +337,7 @@ input[type=number] {
     justify-content: center;
     align-items: center;
     font-family: persianRegular, sans-serif;
-    width: 130px;
+    width: 160px;
     height: 50px;
     left: 27px;
     bottom: 14px;
@@ -352,6 +352,7 @@ input[type=number] {
     margin: 15px;
 }
 .pages_input-select::placeholder{
+    padding-right: 15px;
     font-size: 1.15rem;
     color: #f09d09;
 }
@@ -393,6 +394,12 @@ input[type=number] {
     left: 35px;
 }
 .end_game{
+    background-image: url("../img/bg-3.png");
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -401,6 +408,7 @@ input[type=number] {
 }
 .end_game-text{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -409,36 +417,52 @@ input[type=number] {
     padding: 10px;
     border-radius: 10px;
     width: 80%;
-    box-shadow: rgba(0, 0, 0, 0.17) 0 -23px 25px 0 inset, rgba(0, 0, 0, 0.15) 0 -36px 30px 0 inset, rgba(0, 0, 0, 0.1) 0 -79px 40px 0 inset, rgba(0, 0, 0, 0.06) 0 2px 1px, rgba(0, 0, 0, 0.09) 0 4px 2px, rgba(0, 0, 0, 0.09) 0 8px 4px, rgba(0, 0, 0, 0.09) 0 16px 8px, rgba(0, 0, 0, 0.09) 0 32px 16px;
-    text-shadow: 0 13.36px 8.896px rgba(239, 109, 189, 0),0 -2px 1px rgb(255, 255, 255);
+    background-color: rgba(136, 66, 123, 0.76);
+    box-shadow: rgba(0, 0, 0, 0.38) 0 -23px 25px 0 inset, rgba(0, 0, 0, 0.43) 0 -36px 30px 0 inset, rgba(0, 0, 0, 0.38) 0 -79px 40px 0 inset, rgba(0, 0, 0, 0.06) 0 2px 1px, rgba(0, 0, 0, 0.09) 0 4px 2px, rgba(0, 0, 0, 0.09) 0 8px 4px, rgba(0, 0, 0, 0.09) 0 16px 8px, rgba(0, 0, 0, 0.09) 0 32px 16px;
     letter-spacing: 0;
     cursor: pointer;
-
+    color: white;
+}
+@media screen and (min-width: 512px) {
+    .end_game-text{
+        width: 512px;
+    }
 }
 .end_game-link{
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    font-size: 10rem;
+    font-size: 1.45rem;
+    color: white;
     font-weight: bolder;
     text-decoration: underline;
     margin: 30px 0 10px 0;
     cursor: pointer;
+    background-color: rgba(136, 66, 123, 0.76);
+    box-shadow: rgba(0, 0, 0, 0.38) 0 -23px 25px 0 inset, rgba(0, 0, 0, 0.43) 0 -36px 30px 0 inset, rgba(136, 66, 123, 0.76) 0 -79px 40px 0 inset, rgba(0, 0, 0, 0.06) 0 2px 1px, rgba(0, 0, 0, 0.09) 0 4px 2px, rgba(0, 0, 0, 0.09) 0 8px 4px, rgba(0, 0, 0, 0.09) 0 16px 8px, rgba(0, 0, 0, 0.09) 0 32px 16px;
+    padding: 10px;
+    border-radius: 24px;
 }
 .link-copy{
+    color: white;
     font-size: 2rem;
     font-weight: bolder;
+    margin-top: 10px;
+    background-color: rgba(136, 66, 123, 0.76);
+    box-shadow: rgba(0, 0, 0, 0.38) 0 -23px 25px 0 inset, rgba(0, 0, 0, 0.43) 0 -36px 30px 0 inset, rgba(0, 0, 0, 0.38) 0 -79px 40px 0 inset, rgba(0, 0, 0, 0.06) 0 2px 1px, rgba(0, 0, 0, 0.09) 0 4px 2px, rgba(0, 0, 0, 0.09) 0 8px 4px, rgba(0, 0, 0, 0.09) 0 16px 8px, rgba(0, 0, 0, 0.09) 0 32px 16px;
+    padding: 10px;
+    border-radius: 24px;
 }
 .animate-charcter
 {
     text-transform: uppercase;
     background-image: linear-gradient(
             -225deg,
-            #131313 0%,
-            #251f2a 29%,
+            #b75656 0%,
+            #934ad0 29%,
             #eebece 67%,
-            #231557 100%
+            #ffffff 100%
     );
     background-size: auto auto;
     background-clip: border-box;
@@ -502,5 +526,88 @@ input[type=number] {
     text-shadow: 0 13.36px 8.896px #ef6dbd,0 -2px 1px #fff;
     letter-spacing: 0;
     left: 35px;
+}
+.leaderBoard_btn-endGame{
+    position: absolute;
+    font-size: 2.2rem;
+    font-weight: bolder;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    cursor: pointer;
+    font-family: persianBold, sans-serif;
+    display: block;
+    margin: 18px 0 17px 12px;
+    /*font-size: 80px;*/
+    line-height: 80px;
+    color: #1e1c1b;
+    text-shadow: 0 13.36px 8.896px #ef6dbd,0 -2px 1px #fff;
+    letter-spacing: 0;
+    left: 35px;
+}
+ul {
+    list-style-type: none;
+}
+
+
+.radio-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+h1 {
+    margin-bottom: 20px;
+}
+.radio-item [type="radio"] {
+    display: none;
+}
+.radio-item + .radio-item {
+    margin-top: 15px;
+}
+.radio-item label {
+    display: block;
+    padding: 5px 30px;
+    background:  rgba(136, 66, 123, 0.6);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    min-width: 130px;
+    white-space: nowrap;
+    position: relative;
+    transition: 0.4s ease-in-out 0s;
+}
+.radio-item label:after,
+.radio-item label:before {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+}
+.radio-item label:after {
+    height: 19px;
+    width: 19px;
+    border: 2px solid #FF4400FF;
+    left: 20px;
+    top: calc(50% - 15px);
+}
+.radio-item label:before {
+    background: #FF4400FF;
+    height: 20px;
+    width: 20px;
+    left: 21px;
+    top: calc(50% - 14px);
+    transform: scale(5);
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.4s ease-in-out 0s;
+}
+.radio-item [type="radio"]:checked ~ label {
+    border-color: #FF4400FF;
+}
+.radio-item [type="radio"]:checked ~ label::before {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
 }
 
