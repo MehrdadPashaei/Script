@@ -204,7 +204,7 @@ function sendrequest(status) {
 
                 console.log(gender);
             } else {
-                alert('لطفا یکی از گزینه‌ها را انتخاب کنید.');
+                alert('لطفا جنسیت خود را مشخص کنید.');
             }
 
             break;
