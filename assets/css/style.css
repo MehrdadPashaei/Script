@@ -224,9 +224,13 @@ body {
 }
 
 .gradient-background {
-    background: linear-gradient(249deg, #fef7fb, #f377c1, #f2248e, #fd0d6f, #ef587b, #747173);
-    background-size: 360% 360%;
-    animation: gradient-animation 15s ease infinite;
+    /*background: linear-gradient(249deg, #fef7fb, #f377c1, #f2248e, #fd0d6f, #ef587b, #747173);*/
+    /*background-size: 360% 360%;*/
+    /*animation: gradient-animation 15s ease infinite;*/
+    background-image: url("../img/bg2.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
 @keyframes gradient-animation {

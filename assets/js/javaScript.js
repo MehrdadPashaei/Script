@@ -1,10 +1,10 @@
-
 const url = "http://127.0.0.1:8000/back/";
 const lead_url = "http://127.0.0.1:8000/";
 const static = "https://soorchi.com/static/";
 const offer_id = 274;
 let player_id = null;
 let token = null;
+let gender = "";
 var GetPhone = document.getElementById('getphone');
 var GetCode = document.getElementById('getcode');
 var EndGame = document.getElementById('end_game');
@@ -12,6 +12,7 @@ var EndGame = document.getElementById('end_game');
 var currentUrl = window.location.href;
 GetCode.style.display = "none";
 EndGame.style.display = "none";
+
 
 
 var logo_url =                `${static}img/games/G19/logo.png`;
@@ -54,6 +55,7 @@ var lose_url =           `${static}sounds/G19/lose.mp3`;
 var move_url =           `${static}sounds/G19/move.mp3`;
 
 
+
 function getCookie(name) {
     let cookieValue = null;
     if (document.cookie && document.cookie !== '') {
@@ -69,9 +71,10 @@ function getCookie(name) {
     }
     return cookieValue;
 }
+
 const csrftoken = getCookie('csrftoken');
 
-async function sendreq(offer){
+async function sendreq(offer) {
 
     let item = document.getElementById("getphoneinput")
 
@@ -79,10 +82,10 @@ async function sendreq(offer){
 
     if (val.length < 11) {
         alert("شماره تلفن باید 11 رقم باشد مثل(09120000000)");
-    }else if ((val.length > 11)){
+    } else if ((val.length > 11)) {
         alert("شماره باید 11 رقم باشد . ");
-    }else{
-        let response = await  fetch(`${url}account/get_phone_code`, {
+    } else {
+        let response = await fetch(`${url}account/get_phone_code`, {
             method: "POST",
             body: JSON.stringify({
                 mobile: val,
@@ -91,22 +94,27 @@ async function sendreq(offer){
             headers: {
                 "Content-type": "application/json; charset=UTF-8",
                 'X-CSRFToken': csrftoken
-            }});
+            }
+        });
         let data = await response.json();
-        if(response.status == 200){
+        if (response.status == 200) {
             GetCode.style.display = 'flex';
             // GetCode.style.flexDirection = 'column';
             // GetCode.style.justifyContent = 'center';
             // GetCode.style.alignItems = 'center';
             GetPhone.style.display = 'none';
-        }else{
+        } else {
             alert(data["message"])
-            setInterval(function () {location.replace(`${lead_url}/lead/${data['offer']}/?C=${data['customerID']}`)}, 1000);
-        }}};
+            setInterval(function () {
+                location.replace(`${lead_url}/lead/${data['offer']}/?C=${data['customerID']}`)
+            }, 1000);
+        }
+    }
+};
 
 
 async function sendCustomerData(code, name, gender) {
-    let response = await  fetch(`${url}account/updateMVTCustomerInfo`, {
+    let response = await fetch(`${url}account/updateMVTCustomerInfo`, {
         method: "POST",
         body: JSON.stringify({
             code: code,
@@ -120,7 +128,7 @@ async function sendCustomerData(code, name, gender) {
     });
     let data = await response.json();
     token = data.token
-    if(response.status == 200){
+    if (response.status == 200) {
         GetCode.style.display = 'none';
         var vendor = document.createElement('script');
         vendor.src = `${lead_url}static/js/game/G19/vendor.js?v=13`; // Replace with the path to your JavaScript file
@@ -130,18 +138,19 @@ async function sendCustomerData(code, name, gender) {
         app.src = `${lead_url}static/js/game/G19/app.js?v=22`; // Replace with the path to your JavaScript file
         app.async = true;
         document.head.appendChild(app);
-    } else if(response.status == 404){
+    } else if (response.status == 404) {
         alert("ثبت اطلاعات شما با مشکل مواجه شد  ")
     }
 };
+
 async function endGame(time, score) {
-    let response = await  fetch(`${url}html5/endGameHandler`, {
+    let response = await fetch(`${url}html5/endGameHandler`, {
         method: "POST",
         body: JSON.stringify({
             time: time,
-            score:score,
-            offer : offer_id,
-            CURL : currentUrl
+            score: score,
+            offer: offer_id,
+            CURL: currentUrl
 
         }),
         headers: {
@@ -151,7 +160,7 @@ async function endGame(time, score) {
         }
     });
     let data = await response.json();
-    if(response.status == 200){
+    if (response.status == 200) {
         var canvass = document.querySelector('canvas');
         canvass.style.display = 'none';
         EndGame.style.display = 'flex';
@@ -165,17 +174,43 @@ async function endGame(time, score) {
 
 
     } else if(response.status == 404){
+
         alert("کد صحیح نیست دوباره تلاش کنید!");
     }
 };
-function sendrequest(status){
+
+
+
+function sendrequest(status) {
+    console.log("sssss")
+
     switch (status) {
         case '0':
             sendreq(offer_id)
             break;
 
         case '1':
-            sendCustomerData(document.getElementById('getcodeinput').value,document.getElementById('custumerName').value, "مرد")
+
+            var radios = document.getElementsByName('radio');
+            var selectedValue = null;
+            for (var i = 0; i < radios.length; i++) {
+                if (radios[i].checked) {
+                    selectedValue = radios[i].value;
+                    break;
+                }
+            }
+            if (selectedValue) {
+                if (selectedValue == "on"){
+                    gender = "مرد"
+                }else{
+                    gender = "زن"
+                }
+                sendCustomerData(document.getElementById('getcodeinput').value,document.getElementById('custumerName').value,gender)
+
+                console.log(gender);
+            } else {
+                alert('لطفا جنسیت خود را مشخص کنید.');
+            }
 
             break;
         case '2':
@@ -185,17 +220,33 @@ function sendrequest(status){
 
         default:
             break;
-    }};
+    }
+};
 
 // function to auto copy text
 
-    // Function to copy text to clipboard
-function copy(that){
-    var inp =document.createElement('input');
+// Function to copy text to clipboard
+function copy(that) {
+    var inp = document.createElement('input');
     document.body.appendChild(inp)
-    inp.value =that.textContent
+    inp.value = that.textContent
     inp.select();
-    document.execCommand('copy',true);
+    document.execCommand('copy', true);
     inp.remove();
     alert("لینک با موفقییت کپی شد")
 }
+
+// var radioInputs = document.getElementsByName("radio");
+// var genderChecker = document.getElementById("gender_checker");
+//
+// for (var i = 0; i < radioInputs.length; i++) {
+//     radioInputs[i].onchange = function () {
+//         if (this.id === "radio1") {
+//             genderChecker.checked = true;
+//         } else {
+//             genderChecker.checked = false;
+//         }
+//     }
+// }
+
+
