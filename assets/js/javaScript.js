@@ -2,7 +2,7 @@
 const url = "http://127.0.0.1:8000/back/";
 const lead_url = "http://127.0.0.1:8000/";
 const static = "https://soorchi.com/static/";
-const offer_id = 104;
+const offer_id = 274;
 let player_id = null;
 let token = null;
 var GetPhone = document.getElementById('getphone');
@@ -14,45 +14,44 @@ GetCode.style.display = "none";
 EndGame.style.display = "none";
 
 
-var logo_url =                `${static}img/games/G12/logo.png`;
-var hand_url =                `${static}img/games/G12/hand.png`;
-var bg_url =                  `${static}img/games/G12/bg.png`;
+var logo_url =                `${static}img/games/G19/logo.png`;
+var hand_url =                `${static}img/games/G19/hand.png`;
+var bg_url =                  `${static}img/games/G19/bg.png`;
 
-var start_modal_url =         `${static}img/games/G12/start_modal.png`;
-var start_modal_btn_url =     `${static}img/games/G12/start_modal_btn.png`;
-var start_modal_waiting_url = `${static}img/games/G12/start_modal_waiting.png`;
-var win_modal_url =           `${static}img/games/G12/win_modal.png`;
-var win_modal_btn_url =       `${static}img/games/G12/button_lose.png`;
-var lose_modal_url =          `${static}img/games/G12/lose_modal.png`;
-var lose_modal_btn_url =      `${static}img/games/G12/button_lose.png`;
-var noChance_modal_url =      `${static}img/games/G12/noChance_modal.png`;
-var noChance_modal_btn_url =  `${static}img/games/G12/button_noChance.png`;
-var gift_modal_url =      `${static}img/games/G12/win_gift_modal.png`;
-var gift_modal_btn_url =  `${static}img/games/G12/button_lose.png`;
-var tutorial1_url =       `${static}img/games/G12/tutorial1.png`;
-var tutorial2_url =       `${static}img/games/G12/tutorial2.png`;
-var tutorial3_url =       `${static}img/games/G12/tutorial3.png`;
-var tutorial4_url =       `${static}img/games/G12/tutorial4.png`;
+var start_modal_url =         `${static}img/games/G19/start_modal.png`;
+var start_modal_btn_url =     `${static}img/games/G19/start_modal_btn.png`;
+var start_modal_waiting_url = `${static}img/games/G19/start_modal_waiting.png`;
+var win_modal_url =           `${static}img/games/G19/win_modal.png`;
+var win_modal_btn_url =       `${static}img/games/G19/button_lose.png`;
+var lose_modal_url =          `${static}img/games/G19/lose_modal.png`;
+var lose_modal_btn_url =      `${static}img/games/G19/button_lose.png`;
+var noChance_modal_url =      `${static}img/games/G19/noChance_modal.png`;
+var noChance_modal_btn_url =  `${static}img/games/G19/button_noChance.png`;
+var gift_modal_url =      `${static}img/games/G19/win_gift_modal.png`;
+var gift_modal_btn_url =  `${static}img/games/G19/button_lose.png`;
+var tutorial1_url =       `${static}img/games/G19/tutorial1.png`;
+var tutorial2_url =       `${static}img/games/G19/tutorial2.png`;
+var tutorial3_url =       `${static}img/games/G19/tutorial3.png`;
+var tutorial4_url =       `${static}img/games/G19/tutorial4.png`;
 
-var gems_url =          `${static}img/games/G12/gems.png`;
-var explosion2_url =    `${static}img/games/G12/explosion2.png`;
-var papers_url =        `${static}img/games/G12/papers.png`;
+var gems_url =          `${static}img/games/G19/gems.png`;
+var explosion2_url =    `${static}img/games/G19/explosion2.png`;
+var papers_url =        `${static}img/games/G19/papers.png`;
 
 
 
 // sounds' urls
-var complete_url =       `${static}sounds/G12/complete.mp3`;
-var fall_url =           `${static}sounds/G12/fall.mp3`;
-var colourBomb_url =     `${static}sounds/G12/colourBomb.mp3`;
-var lineBlast_url =      `${static}sounds/G12/dropped.mp3`;
-var click_url =          `${static}sounds/G12/click.mp3`;
-var music_url =          `${static}sounds/G12/music.mp3`;
-var score_url =          `${static}sounds/G12/score.mp3`;
-var win1_url =           `${static}sounds/G12/win1.mp3`;
-var win2_url =           `${static}sounds/G12/win2.mp3`;
-var lose_url =           `${static}sounds/G12/lose.mp3`;
-var move_url =           `${static}sounds/G12/move.mp3`;
-
+var complete_url =       `${static}sounds/G19/complete.mp3`;
+var fall_url =           `${static}sounds/G19/fall.mp3`;
+var colourBomb_url =     `${static}sounds/G19/colourBomb.mp3`;
+var lineBlast_url =      `${static}sounds/G19/dropped.mp3`;
+var click_url =          `${static}sounds/G19/click.mp3`;
+var music_url =          `${static}sounds/G19/music.mp3`;
+var score_url =          `${static}sounds/G19/score.mp3`;
+var win1_url =           `${static}sounds/G19/win1.mp3`;
+var win2_url =           `${static}sounds/G19/win2.mp3`;
+var lose_url =           `${static}sounds/G19/lose.mp3`;
+var move_url =           `${static}sounds/G19/move.mp3`;
 
 
 function getCookie(name) {
@@ -159,12 +158,12 @@ async function endGame(time, score) {
 
         var p1 = document.getElementById("end_game-message");
         var a1 = document.getElementById("end_game-link");
+        var leadrBoard = document.getElementById("leadrBoard")
+        p1.innerText = data.message;
+        a1.innerText = data.viral;
+        leadrBoard.setAttribute("href", data.leaderBoard); 
 
-        p1.innerHTML = data.message;
-        a1.innerHTML = data.viral;
 
-        EndGame.appendChild(p1);
-        EndGame.appendChild(a1);
     } else if(response.status == 404){
         alert("کد صحیح نیست دوباره تلاش کنید!");
     }
@@ -176,7 +175,7 @@ function sendrequest(status){
             break;
 
         case '1':
-            sendCustomerData(document.getElementById('getcodeinput').value,document.getElementById('custumerName').value, document.getElementById('page4_gender').value)
+            sendCustomerData(document.getElementById('getcodeinput').value,document.getElementById('custumerName').value, "مرد")
 
             break;
         case '2':
