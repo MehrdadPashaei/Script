@@ -8,6 +8,7 @@ let gender = "";
 var GetPhone = document.getElementById('getphone');
 var GetCode = document.getElementById('getcode');
 var EndGame = document.getElementById('end_game');
+var endGame_Viral = "";
 
 var currentUrl = window.location.href;
 GetCode.style.display = "none";
@@ -170,6 +171,7 @@ async function endGame(time, score) {
         var leadrBoard = document.getElementById("leadrBoard")
         p1.innerText = data.message;
         a1.innerText = data.viral;
+        endGame_Viral = data.viral;
         leadrBoard.setAttribute("href", data.leaderBoard); 
 
 
@@ -227,12 +229,13 @@ function sendrequest(status) {
 
 // Function to copy text to clipboard
 function copy(that) {
+
     var inp = document.createElement('input');
     document.body.appendChild(inp)
-    inp.value = that.textContent
+    inp.value = endGame_Viral;
     inp.select();
     document.execCommand('copy', true);
-    inp.remove();
+    // inp.remove();
     alert("لینک با موفقییت کپی شد")
 }
 
